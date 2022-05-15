@@ -1,0 +1,10 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+canvas{
+    max-width: 90vmax;
+    max-width: 90vmax;
+}
