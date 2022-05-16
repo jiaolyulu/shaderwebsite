@@ -1,4 +1,6 @@
-
+#ifdef GL_ES
+precision mediump float;
+#endif
 #define S(a,b,c) smoothstep(a,b,c)
 uniform vec2 u_resolution; // This is passed in as a uniform from the sketch.js file
 uniform float u_time;
