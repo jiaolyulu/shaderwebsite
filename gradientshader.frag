@@ -52,7 +52,7 @@ void main() {
    float a = blob(x,y,mouseX*1.+2.,3.9-mouseX,0.7) + blob(x,y,mouseX*1.+3.,3.9+mouseX,0.6) ;
    float b = blob(x,y,-mouseX*0.8+1.,1.9-1.4*mouseX,0.8) + blob(x,y,mouseX*0.25+2.,2.9-mouseX,0.4);
    float c = blob(x,y,1.-mouseX*1.,4.9-1.3*mouseX,0.5) + blob(x,y,mouseX*1.5+1.4,1.9+2.*mouseX,0.3);
-   vec3 originColor=vec3(b*0.8,c,a*(60.-a)/40.)/60.;
+   vec3 originColor=vec3(b*0.8,c,a*(60.-a)/20.)/60.;
    
    
    vec3 d = 1.4-originColor;
