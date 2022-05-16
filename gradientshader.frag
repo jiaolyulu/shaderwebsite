@@ -1,20 +1,22 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 precision highp float;
 #else
 precision mediump float;
 #endif
 
-uniform vec2 u_resolution; // This is passed in as a uniform from the sketch.js file
+uniform vec2 u_resolution; 
 uniform float u_time;
+
 uniform vec2 u_mouse;
-
-
 float speed=1.;
 float n=2.0;
 
 float blob(float x,float y,float fx,float fy,float size){
-   float xx = x+abs(u_mouse.x/ u_resolution.x-0.5)*sin(iTime/speed*size+fx)*size*7.*(1.-abs(u_mouse.x/ u_resolution.x-0.5));
-   float yy = y+abs(u_mouse.x/ u_resolution.x-0.5)*cos(iTime/speed*size+fy)*size*7.*(1.-abs(u_mouse.x/ u_resolution.x-0.5));
+   float xx = x+abs(u_mouse.x/ u_resolution.x-0.5)*sin(u_time/speed*size+fx)*size*7.*(1.-abs(u_mouse.x/ u_resolution.x-0.5));
+   float yy = y+abs(u_mouse.x/ u_resolution.x-0.5)*cos(u_time/speed*size+fy)*size*7.*(1.-abs(u_mouse.x/ u_resolution.x-0.5));
    float value=sqrt(xx*xx+yy*yy);
 
    return min(60.,20.0/value);
@@ -58,7 +60,7 @@ void main() {
    d=max(vec3(0.),d);
 
 
-   gl_FragColor = vec4(d,1.0);
+   gl_FragColor = vec4(d.x,d.y,d.z,1.0);
 }
 
 
